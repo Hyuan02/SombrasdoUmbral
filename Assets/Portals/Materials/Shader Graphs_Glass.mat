@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Shader Graphs_Cube Shader
-  m_Shader: {fileID: -6465566751694194690, guid: 892c72abb8f3d274491ce3abbee459f1,
+  m_Name: Shader Graphs_Glass
+  m_Shader: {fileID: -6465566751694194690, guid: 77eff3b758f38a5489fade8d5029b5f3,
     type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
@@ -21,5 +21,4 @@ Material:
     serializedVersion: 3
     m_TexEnvs: []
     m_Floats: []
-    m_Colors:
-    - Color_E5521EC7: {r: 0.23789605, g: 0.509434, b: 0.43133682, a: 0}
+    m_Colors: []

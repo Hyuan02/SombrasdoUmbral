@@ -31,9 +31,9 @@ public class CameraPointer : MonoBehaviour
     private Renderer dynamicGazeObject = null;
 
     [SerializeField]
-    private Material pointerExit;
+    private Material pointerExit = null;
     [SerializeField]
-    private Material pointerEnter;    
+    private Material pointerEnter = null;    
 
     public static CameraPointer instance;
 

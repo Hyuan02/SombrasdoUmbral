@@ -26,9 +26,13 @@ public class PanelFlow : MonoBehaviour
     }
 
     public void GoPrevious(){
-        transform.GetChild(panelIndex).gameObject.SetActive(false);
-        if(panelIndex > 0)
+        if(panelIndex > 0){
+            transform.GetChild(panelIndex).gameObject.SetActive(false);
             panelIndex--;
+        }
+        
+        
+            
     }
 
 

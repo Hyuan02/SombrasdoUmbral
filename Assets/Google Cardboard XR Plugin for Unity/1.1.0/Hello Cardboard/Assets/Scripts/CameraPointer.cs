@@ -24,18 +24,12 @@ using UnityEngine;
 /// </summary>
 public class CameraPointer : MonoBehaviour
 {
-    private const float k_MaxDistance = 200f;
+    private const float k_MaxDistance = 400f;
     private GameObject m_GazedAtObject = null;
-
-    [SerializeField]
-    private Renderer dynamicGazeObject = null;
-
-    [SerializeField]
-    private Material pointerExit;
-    [SerializeField]
-    private Material pointerEnter;    
-
     public static CameraPointer instance;
+
+    [SerializeField]
+    private FuzeAction gazeFill = null;
 
 
     private void Awake(){
@@ -52,22 +46,26 @@ public class CameraPointer : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(transform.position, transform.forward, out hit, k_MaxDistance))
         {
-            // GameObject detected in front of the camera.
-            if (m_GazedAtObject != hit.transform.gameObject)
+            if (hit.transform.tag == "Interactable")
             {
-                // New GameObject.
-                m_GazedAtObject?.SendMessage("OnGazeExit", SendMessageOptions.DontRequireReceiver);
-                m_GazedAtObject = hit.transform.gameObject;
-                m_GazedAtObject?.SendMessage("OnGazeEnter", SendMessageOptions.DontRequireReceiver);
+                // GameObject detected in front of the camera.
+                if (m_GazedAtObject != hit.transform.gameObject)
+                {
+                    m_GazedAtObject = hit.transform.gameObject;
+                    gazeFill.StartFuzeAction();
+                }
+                else
+                {
+                    gazeFill.OnFuzeAction();
+                }
             }
+
         }
         else
         {
             // No GameObject detected in front of the camera.
-            m_GazedAtObject?.SendMessage("OnGazeExit", SendMessageOptions.DontRequireReceiver);
+            gazeFill.ExitFuzeAction();
             m_GazedAtObject = null;
-
-            
         }
 
         // Checks for screen touches.
@@ -78,11 +76,13 @@ public class CameraPointer : MonoBehaviour
     }
 
 
-    public void SetEnterMaterial(){
-        dynamicGazeObject.material = pointerEnter;
+    public void SendGazeEnter(){
+        m_GazedAtObject?.SendMessage("OnGazeEnter", SendMessageOptions.DontRequireReceiver);
     }
 
-    public void SetExitMaterial(){
-        dynamicGazeObject.material = pointerExit;
+    public void SendGazeExit(){
+        m_GazedAtObject?.SendMessage("OnGazeExit", SendMessageOptions.DontRequireReceiver);
     }
+
+    
 }

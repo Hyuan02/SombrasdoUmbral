@@ -85,7 +85,7 @@ public class ObjectController : MonoBehaviour
     /// </summary>
     public void OnPointerEnter()
     {
-        CameraPointer.instance.SetEnterMaterial();
+        // CameraPointer.instance.SetEnterMaterial();
         SetMaterial(true);
     }
 
@@ -94,7 +94,7 @@ public class ObjectController : MonoBehaviour
     /// </summary>
     public void OnPointerExit()
     {
-        CameraPointer.instance.SetExitMaterial();
+        // CameraPointer.instance.SetExitMaterial();
         SetMaterial(false);
     }
 

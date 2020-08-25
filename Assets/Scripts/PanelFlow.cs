@@ -7,6 +7,8 @@ public class PanelFlow : MonoBehaviour
 {
 
     int panelIndex = 0;
+
+    public int panelNumber{get {return panelIndex;}} 
     // Start is called before the first frame update
     void Start()
     {

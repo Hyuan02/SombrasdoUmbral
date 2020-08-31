@@ -21,7 +21,7 @@ public class SliderFlow : MonoBehaviour
             if(actualIndex < panels.Length - 1){
                 panels[actualIndex].GetComponent<TranslatePanel>().GoToPoint(transform.Find("PreviousPanel"));
             }
-            if(actualIndex>0){
+            if(actualIndex>0 && actualIndex < panels.Length - 1){
                 panels[actualIndex-1].transform.SetParent(transform.Find("Deactivated"));
                 panels[actualIndex-1].transform.localPosition = Vector3.zero;
             }
@@ -41,7 +41,7 @@ public class SliderFlow : MonoBehaviour
             if(actualIndex > 0){
                 panels[actualIndex].GetComponent<TranslatePanel>().GoToPoint(transform.Find("NextPanel"));
             }
-            if(actualIndex <= panels.Length - 2){
+            if(actualIndex <= panels.Length - 2 && actualIndex > 0){
                 panels[actualIndex + 1].transform.SetParent(transform.Find("Deactivated"));
                 panels[actualIndex + 1].transform.localPosition = Vector3.zero;
             }

@@ -15,6 +15,7 @@ public class BillboardEffect : MonoBehaviour
     // Update is called once per frame
     void LateUpdate()
     {
-        transform.LookAt(toLook.forward);
+        // transform.LookAt(toLook.forward);
+        transform.forward = toLook.forward;
     }
 }

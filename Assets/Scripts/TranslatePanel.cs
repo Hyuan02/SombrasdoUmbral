@@ -22,18 +22,19 @@ public class TranslatePanel : MonoBehaviour
     {
         if(movement){
             this.transform.position = Vector3.Lerp(this.transform.position, nextPosition, Time.deltaTime * speed);
-            this.transform.rotation = Quaternion.Lerp(this.transform.rotation, Quaternion.Euler(0,0,0), Time.deltaTime*speed);
             if(Vector3.Distance(this.transform.position, nextPosition)<1.0f){
                 movement = false;
                 this.transform.SetParent(toParent);
-                this.transform.localRotation = Quaternion.Euler(0,0,0);
+                // this.transform.localRotation = Quaternion.Euler(0,0,0);
             }
         }        
     }
 
     public void GoToPoint(Transform parent){
+        this.transform.SetParent(parent.parent);
         nextPosition = parent.position;
         toParent = parent;
         movement = true;
+        this.transform.rotation = Quaternion.Euler(0,0,0);
     }
 }

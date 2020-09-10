@@ -16,7 +16,7 @@ public class ZoomSinglePanel : MonoBehaviour
     private float speed = 1.0f;
     private Vector3 toScale = Vector3.zero;
 
-    private string parentName = "";
+    private string pageParentName = "";
     
     // Start is called before the first frame update
     void Start()
@@ -41,9 +41,9 @@ public class ZoomSinglePanel : MonoBehaviour
     }
 
     private void CheckParent(){
-        if(transform.parent.name != parentName){
-            parentName = transform.parent.name;
-            switch(transform.parent.name){
+        if(transform.parent.parent.name != pageParentName){
+            pageParentName = transform.parent.parent.name;
+            switch(transform.parent.parent.name){
                 case "PreviousPanel":
                 case "NextPanel":
                     toScale = initialScale * 0.5f;

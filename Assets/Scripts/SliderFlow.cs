@@ -22,7 +22,7 @@ public class SliderFlow : MonoBehaviour
             if(actualIndex < panels.Length - 1){
                 panels[actualIndex].GetComponent<TranslatePanel>().GoToPoint(transform.Find("PreviousPanel"));
                 //panels[actualIndex].tag = "Untagged";
-                Invoke("SetUntagged", 0.1f);
+                SetUntagged();
             }
             if(actualIndex>0 && actualIndex < panels.Length - 1){
                 panels[actualIndex-1].transform.SetParent(transform.Find("Deactivated"));
@@ -46,7 +46,7 @@ public class SliderFlow : MonoBehaviour
             if(actualIndex > 0){
                 panels[actualIndex].GetComponent<TranslatePanel>().GoToPoint(transform.Find("NextPanel"));
                 //panels[actualIndex].tag = "Untagged";
-                Invoke("SetUntagged", 0.1f);
+                SetUntagged();
             }
             if(actualIndex <= panels.Length - 2 && actualIndex > 0){
                 panels[actualIndex + 1].transform.SetParent(transform.Find("Deactivated"));

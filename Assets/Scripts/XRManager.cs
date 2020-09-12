@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.Management;
-
+using UnityEngine.XR;
 public class XRManager : MonoBehaviour
 {
 
@@ -28,10 +28,13 @@ public class XRManager : MonoBehaviour
     {
         int width = Screen.width;
         int height = Screen.height;
+        
         #if !UNITY_EDITOR
         Debug.Log("Initializing XR...");
+        
         Screen.orientation = ScreenOrientation.LandscapeLeft;
-        yield return XRGeneralSettings.Instance.Manager.InitializeLoader();
+        if(XRGeneralSettings.Instance.Manager.activeLoader == null)
+            yield return XRGeneralSettings.Instance.Manager.InitializeLoader();
 
         if (XRGeneralSettings.Instance.Manager.activeLoader == null)
         {
@@ -41,6 +44,7 @@ public class XRManager : MonoBehaviour
         {
             Debug.Log("Starting XR...");
             XRGeneralSettings.Instance.Manager.StartSubsystems();
+            
             displayObject.SetActive(true);
         }
         #elif UNITY_EDITOR
@@ -56,7 +60,7 @@ public class XRManager : MonoBehaviour
         Debug.Log("Stopping XR...");
         #if !UNITY_EDITOR
         XRGeneralSettings.Instance.Manager.StopSubsystems();
-        XRGeneralSettings.Instance.Manager.DeinitializeLoader();
+        // XRGeneralSettings.Instance.Manager.DeinitializeLoader();
         #else
         Cursor.lockState = CursorLockMode.None;
         #endif

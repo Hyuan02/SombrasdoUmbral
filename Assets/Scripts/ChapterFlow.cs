@@ -22,6 +22,10 @@ public class ChapterFlow : MonoBehaviour
             DestroyImmediate(this.gameObject);
         }
     }
+
+    void Start(){
+        Invoke("CheckButtons", 5.0f);
+    }
     public void GoNext(){
         if(actualIndex < SceneManager.sceneCountInBuildSettings){
             actualIndex++;
@@ -45,22 +49,29 @@ public class ChapterFlow : MonoBehaviour
     IEnumerator WaitForLoad(){
         yield return new WaitUntil(()=>op.progress >= 0.9f);
         animPanel.transform.parent.gameObject.SetActive(true);
+        DisableButtons();
         animPanel.Play("alphaentryanim");        
     }
 
     public void AllowSceneActivator(){
         op.allowSceneActivation = true;
         animPanel.Play("alphaexitanim");
-        CheckButtons();
+        Invoke("CheckButtons", 5.0f);
     }
 
     public void DisableSceneActivator(){
         animPanel.transform.parent.gameObject.SetActive(false);
     }
     
+    void DisableButtons(){
+        foreach(Transform t in transform){
+            t.gameObject.SetActive(false);
+        }
+    }
     void CheckButtons(){
         transform.GetChild(0).gameObject.SetActive(true);
         transform.GetChild(1).gameObject.SetActive(true);
+        transform.GetChild(2).gameObject.SetActive(true);
         if(actualIndex == 1){
             transform.GetChild(0).gameObject.SetActive(false);
         }

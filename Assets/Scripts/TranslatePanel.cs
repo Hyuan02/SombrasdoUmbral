@@ -25,7 +25,7 @@ public class TranslatePanel : MonoBehaviour
             if(Vector3.Distance(this.transform.position, nextPosition)<1.0f){
                 movement = false;
                 this.transform.SetParent(toParent);
-                // this.transform.localRotation = Quaternion.Euler(0,0,0);
+                this.transform.localRotation = Quaternion.Euler(0,0,0);
             }
         }        
     }
@@ -35,6 +35,6 @@ public class TranslatePanel : MonoBehaviour
         nextPosition = parent.position;
         toParent = parent;
         movement = true;
-        this.transform.rotation = Quaternion.Euler(0,0,0);
+        // this.transform.rotation = Quaternion.Euler(0,0,0);
     }
 }

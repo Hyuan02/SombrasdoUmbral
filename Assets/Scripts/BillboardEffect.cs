@@ -7,15 +7,9 @@ public class BillboardEffect : MonoBehaviour
     [SerializeField]
     private Transform toLook = null;
     // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
     void LateUpdate()
     {
-        // transform.LookAt(toLook.forward);
-        transform.forward = toLook.forward;
+        transform.rotation = toLook.rotation;
     }
+
 }

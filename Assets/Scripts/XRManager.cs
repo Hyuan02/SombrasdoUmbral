@@ -12,18 +12,19 @@ public class XRManager : MonoBehaviour
     void Awake(){
         if(instance == null){
             instance = this;
+            DontDestroyOnLoad(this.gameObject);
         }
         else{
-            Destroy(this);
+            DestroyImmediate(this.gameObject);
         }
-        DontDestroyOnLoad(this.gameObject);
+        
     }
 
     void Start(){
         StartCoroutine(StartXR());
     }
     
-    public IEnumerator StartXR()
+    IEnumerator StartXR()
     {
         int width = Screen.width;
         int height = Screen.height;
@@ -50,11 +51,20 @@ public class XRManager : MonoBehaviour
 
     }
 
-    public void StopXR()
+    void StopXR()
     {
         Debug.Log("Stopping XR...");
+        #if !UNITY_EDITOR
         XRGeneralSettings.Instance.Manager.StopSubsystems();
         XRGeneralSettings.Instance.Manager.DeinitializeLoader();
+        #else
+        Cursor.lockState = CursorLockMode.None;
+        #endif
         Debug.Log("XR stopped completely.");
+    }
+
+    public void GotoMenu(){
+        StopXR();
+        Destroy(this.gameObject);
     }
 }

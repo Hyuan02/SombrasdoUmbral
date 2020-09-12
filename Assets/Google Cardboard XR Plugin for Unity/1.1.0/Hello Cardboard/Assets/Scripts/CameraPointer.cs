@@ -33,7 +33,9 @@ public class CameraPointer : MonoBehaviour
 
 
     private void Awake(){
-        instance = this;
+        if(instance == null){
+            instance = this;
+        }
     }
 
     /// <summary>

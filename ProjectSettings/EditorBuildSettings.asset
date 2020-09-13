@@ -23,12 +23,18 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/HQSceneSlider.unity
     guid: 861be22c6ace2c94f9813fbb2b8457d4
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
-    path: Assets/Scenes/PageTest.unity
-    guid: c745b29dc2705464991240e9c53047b8
-  - enabled: 1
+    path: Assets/Scenes/Capitulo1.unity
+    guid: 877024d0f355de34eba63abec3246952
+  - enabled: 0
     path: Assets/Scenes/PageTest 2.unity
     guid: 152e767d3d9cea041aa4486c3f4e8a72
+  - enabled: 1
+    path: Assets/Scenes/Capitulo2.unity
+    guid: 9ca755a59715e79468d52198f76f8186
   m_configObjects:
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 75d2597f3fbca9e4295ebb6451264263,
       type: 2}

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 [RequireComponent(typeof(AudioSource))]
 public class SoundManager : MonoBehaviour
@@ -9,6 +10,7 @@ public class SoundManager : MonoBehaviour
 
     private AudioSource mainAudioSource;
 
+    public AudioMixer mainMixer;
     public static SoundManager instance;
 
     [SerializeField]
@@ -18,10 +20,26 @@ public class SoundManager : MonoBehaviour
     [SerializeField]
     [Range(0.0f, 1.0f)]
     private float volumeToFX = 1.0f;
+
+    private int soundActivated = 1;
+
+    private int soundMode = 1;
     void Awake(){
         mainAudioSource = this.GetComponent<AudioSource>();
         instance = this;
+
+        soundActivated = PlayerPrefs.GetInt("Sound", 1);
+        soundMode = PlayerPrefs.GetInt("SoundMode", 0);
+        mainAudioSource.mute = soundActivated > 0 ? false : true;
+        volumeToTrack = soundMode > 0 ? volumeToTrack : volumeToTrack * 2;
+        
+        
         mainAudioSource.volume = volumeToTrack;
+    }
+
+    void Start(){
+        mainMixer.SetFloat("rain_volume", soundActivated > 0 ? 0f : -80f);
+        mainMixer.SetFloat("music_volume", soundMode > 0 ? -10f : 0f);
     }
 
 
@@ -34,7 +52,13 @@ public class SoundManager : MonoBehaviour
 
     public void Activate3DSound(int soundIndex){
         this.transform.GetChild(soundIndex).gameObject.SetActive(true);
-        this.transform.GetChild(soundIndex).GetComponent<AudioSource>().volume = volumeToFX;
+        AudioSource a1 = this.transform.GetChild(soundIndex).GetComponent<AudioSource>();
+        a1.volume = volumeToFX;
+        a1.mute = soundActivated > 0 ? false : true;
+        a1.spatialBlend = soundMode;
+        a1.panStereo = soundMode > 0 ? 0 : 1;
+        mainMixer.SetFloat("fx_volume", soundMode > 0 ? 20f : 0f);
+
     }
     
 

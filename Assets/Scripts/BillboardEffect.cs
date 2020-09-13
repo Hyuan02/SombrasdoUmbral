@@ -4,18 +4,20 @@ using UnityEngine;
 
 public class BillboardEffect : MonoBehaviour
 {
+
+    
     [SerializeField]
     private Transform toLook = null;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
+    void Awake(){
+        if(toLook == null){
+            toLook = Camera.main.transform;
+        }
+    }
+    // Start is called before the first frame update
     void LateUpdate()
     {
-        // transform.LookAt(toLook.forward);
-        transform.forward = toLook.forward;
+        transform.rotation = toLook.rotation;
     }
+
 }

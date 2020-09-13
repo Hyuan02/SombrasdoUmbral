@@ -15,7 +15,6 @@ public class ScreenManager : MonoBehaviour
     void Awake(){
         if(instance == null){
             instance = this;
-            Screen.orientation = ScreenOrientation.Portrait;
         }
         else{
             Destroy(instance);

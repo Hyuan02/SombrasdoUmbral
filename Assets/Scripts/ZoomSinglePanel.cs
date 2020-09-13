@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
+[RequireComponent(typeof (Canvas))]
 public class ZoomSinglePanel : MonoBehaviour
 {
     
@@ -9,6 +11,7 @@ public class ZoomSinglePanel : MonoBehaviour
     private Vector3 initialScale = new Vector3(0.05f, 0.05f, 0.05f);
     // private bool zoomMode = false;
 
+    private Vector3 initialParentScale = new Vector3(1,1,1);
     [SerializeField]
     private float scaleFactor = 2.0f;
 
@@ -16,40 +19,58 @@ public class ZoomSinglePanel : MonoBehaviour
     private float speed = 1.0f;
     private Vector3 toScale = Vector3.zero;
 
-    private string parentName = "";
+    private Vector3 toParentScale = Vector3.zero;
+
+    private string pageParentName = "";
     
     // Start is called before the first frame update
     void Start()
     {
+        // toParentScale = initialParentScale;
     }
 
     // Update is called once per frame
     void LateUpdate()
     {
         CheckParent();
+        Scaler();
+        ParentScaler();
+    }
+
+    void Scaler(){
         transform.localScale = Vector3.Lerp(this.transform.localScale, toScale, Time.deltaTime * speed);
+    }
+
+    void ParentScaler(){
+        transform.parent.localScale = Vector3.Lerp(this.transform.parent.localScale, toParentScale, Time.deltaTime * speed);
     }
 
     public void ActivateZoom(){
         // zoomMode = true;
         toScale = initialScale * scaleFactor;
+        this.GetComponent<Canvas>().sortingOrder = 2;
     }
 
     public void DisableZoom(){
         // zoomMode = true;
         toScale = initialScale;
+        this.GetComponent<Canvas>().sortingOrder = 1;
     }
 
     private void CheckParent(){
-        if(transform.parent.name != parentName){
-            parentName = transform.parent.name;
-            switch(transform.parent.name){
+        if(transform.parent.parent.name != pageParentName){
+            pageParentName = transform.parent.parent.name;
+            switch(transform.parent.parent.name){
                 case "PreviousPanel":
                 case "NextPanel":
-                    toScale = initialScale * 0.5f;
+                    toParentScale = initialParentScale * 0.5f;
+                    toScale = initialScale;
+                    this.GetComponent<Canvas>().sortingOrder = 0;
                 break;
                 case "CurrentPanel":
+                    toParentScale = initialParentScale;
                     toScale = initialScale;
+                    this.GetComponent<Canvas>().sortingOrder = 1;
                 break;
             }    
         }

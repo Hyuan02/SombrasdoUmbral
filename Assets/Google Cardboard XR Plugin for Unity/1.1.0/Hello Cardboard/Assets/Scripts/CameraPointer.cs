@@ -33,7 +33,9 @@ public class CameraPointer : MonoBehaviour
 
 
     private void Awake(){
-        instance = this;
+        if(instance == null){
+            instance = this;
+        }
     }
 
     /// <summary>
@@ -51,6 +53,7 @@ public class CameraPointer : MonoBehaviour
                 // GameObject detected in front of the camera.
                 if (m_GazedAtObject != hit.transform.gameObject)
                 {
+                    gazeFill.ExitFuzeAction();
                     m_GazedAtObject = hit.transform.gameObject;
                     gazeFill.StartFuzeAction();
                 }

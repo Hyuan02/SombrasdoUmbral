@@ -334,6 +334,7 @@ GameObject:
   m_Component:
   - component: {fileID: 104990740}
   - component: {fileID: 104990741}
+  - component: {fileID: 104990742}
   m_Layer: 0
   m_Name: SoundEffects
   m_TagString: Untagged
@@ -452,6 +453,22 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &104990742
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 104990739}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8337b5fc05a2114084f86743557bbbf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clips:
+  - {fileID: 8300000, guid: e8bd115017cfdd640a3a1acf05a9d557, type: 3}
+  volumeToTrack: 0.2
+  volumeToFX: 1
 --- !u!1 &139169591
 GameObject:
   m_ObjectHideFlags: 0
@@ -1654,7 +1671,6 @@ GameObject:
   m_Component:
   - component: {fileID: 610111476}
   - component: {fileID: 610111475}
-  - component: {fileID: 610111478}
   - component: {fileID: 610111477}
   m_Layer: 0
   m_Name: Page4
@@ -1704,22 +1720,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04bc6715dbb5aa440bb5a4c101058181, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectToActivate: {fileID: 601640943}
---- !u!114 &610111478
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 610111474}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c0511de75d5799f49bff40d28cd87e68, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sourceToChange: {fileID: 104990741}
-  clipToTrigger: {fileID: 8300000, guid: e8bd115017cfdd640a3a1acf05a9d557, type: 3}
-  volumeToSwitch: 0.26
+  index: 0
 --- !u!1 &619837618
 GameObject:
   m_ObjectHideFlags: 0
@@ -3286,6 +3287,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1524290093}
   - component: {fileID: 1524290094}
+  - component: {fileID: 1524290095}
   m_Layer: 0
   m_Name: Page3
   m_TagString: Untagged
@@ -3324,6 +3326,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1
+--- !u!114 &1524290095
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1524290092}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0511de75d5799f49bff40d28cd87e68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  index: 0
 --- !u!1 &1653015928
 GameObject:
   m_ObjectHideFlags: 0

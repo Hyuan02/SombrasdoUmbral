@@ -50,10 +50,11 @@ public class SoundManager : MonoBehaviour
         mainAudioSource.Play();
     }
 
-    public void Activate3DSound(int soundIndex){
+    public void Activate3DSound(int soundIndex, float time = 0.0f){
         this.transform.GetChild(soundIndex).gameObject.SetActive(true);
         AudioSource a1 = this.transform.GetChild(soundIndex).GetComponent<AudioSource>();
         a1.volume = volumeToFX;
+        a1.time = time;
         a1.mute = soundActivated > 0 ? false : true;
         a1.spatialBlend = soundMode;
         a1.panStereo = soundMode > 0 ? 0 : 1;

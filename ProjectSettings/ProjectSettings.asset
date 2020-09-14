@@ -13,7 +13,7 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: Obsidiana
-  productName: Sombras do Umbral
+  productName: Sombras do Umbral_beta
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -121,8 +121,9 @@ PlayerSettings:
     16:10: 1
     16:9: 1
     Others: 1
-  bundleVersion: 0.18
-  preloadedAssets: []
+  bundleVersion: 0.50
+  preloadedAssets:
+  - {fileID: 1794993006114770834, guid: 75d2597f3fbca9e4295ebb6451264263, type: 2}
   metroInputSource: 0
   wsaTransparentSwapchain: 0
   m_HolographicPauseOnTrackingLoss: 1

@@ -36,6 +36,9 @@ public class CameraPointer : MonoBehaviour
         if(instance == null){
             instance = this;
         }
+        else{
+            Destroy(this);
+        }
     }
 
     /// <summary>
@@ -80,11 +83,16 @@ public class CameraPointer : MonoBehaviour
 
 
     public void SendGazeEnter(){
-        m_GazedAtObject?.SendMessage("OnGazeEnter", SendMessageOptions.DontRequireReceiver);
+        if(m_GazedAtObject != null){
+            m_GazedAtObject?.SendMessage("OnGazeEnter", SendMessageOptions.DontRequireReceiver);
+        }
     }
 
     public void SendGazeExit(){
-        m_GazedAtObject?.SendMessage("OnGazeExit", SendMessageOptions.DontRequireReceiver);
+        if(m_GazedAtObject != null){
+            m_GazedAtObject?.SendMessage("OnGazeExit", SendMessageOptions.DontRequireReceiver);
+        }
+        
     }
 
     

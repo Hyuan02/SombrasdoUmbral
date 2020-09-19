@@ -5,33 +5,12 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/Scenes/SampleScene.unity
-    guid: d1c3109bdb54ad54c8a2b2838528e640
-  - enabled: 0
-    path: Assets/Google Cardboard XR Plugin for Unity/1.1.0/Hello Cardboard/Assets/Scenes/HelloCardboard.unity
-    guid: 145a2a45d7bc746b19cb68410368bf96
-  - enabled: 0
-    path: Assets/Scenes/TechDemo.unity
-    guid: 972ca36d32b1f22468c2615410f502ed
-  - enabled: 0
-    path: Assets/Scenes/HQ Scene.unity
-    guid: 72fb35898ea89574c89a2cb036b1a247
   - enabled: 1
     path: Assets/Scenes/MenuScene.unity
     guid: c6cfe833531febf4d93306536ff1ade5
-  - enabled: 0
-    path: Assets/Scenes/HQSceneSlider.unity
-    guid: 861be22c6ace2c94f9813fbb2b8457d4
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/Capitulo1.unity
     guid: 877024d0f355de34eba63abec3246952
-  - enabled: 0
-    path: Assets/Scenes/PageTest 2.unity
-    guid: 152e767d3d9cea041aa4486c3f4e8a72
   - enabled: 1
     path: Assets/Scenes/Capitulo2.unity
     guid: 9ca755a59715e79468d52198f76f8186

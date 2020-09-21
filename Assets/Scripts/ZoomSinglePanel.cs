@@ -22,6 +22,9 @@ public class ZoomSinglePanel : MonoBehaviour
     private Vector3 toParentScale = Vector3.zero;
 
     private string pageParentName = "";
+
+    [SerializeField]
+    private bool isChoicePage = false;
     
     // Start is called before the first frame update
     void Start()
@@ -38,11 +41,11 @@ public class ZoomSinglePanel : MonoBehaviour
     }
 
     void Scaler(){
-        transform.localScale = Vector3.Lerp(this.transform.localScale, toScale, Time.deltaTime * speed);
+        transform.localScale = Vector3.Lerp(this.transform.localScale, toScale, Time.unscaledDeltaTime * speed);
     }
 
     void ParentScaler(){
-        transform.parent.localScale = Vector3.Lerp(this.transform.parent.localScale, toParentScale, Time.deltaTime * speed);
+        transform.parent.localScale = Vector3.Lerp(this.transform.parent.localScale, toParentScale, Time.unscaledDeltaTime * speed);
     }
 
     public void ActivateZoom(){
@@ -58,9 +61,10 @@ public class ZoomSinglePanel : MonoBehaviour
     }
 
     private void CheckParent(){
-        if(transform.parent.parent.name != pageParentName){
-            pageParentName = transform.parent.parent.name;
-            switch(transform.parent.parent.name){
+        string parentName = isChoicePage ? transform.parent.parent.parent.name : transform.parent.parent.name;
+        if(parentName != pageParentName){
+            pageParentName = parentName;
+            switch(parentName){
                 case "PreviousPanel":
                 case "NextPanel":
                     toParentScale = initialParentScale * 0.5f;

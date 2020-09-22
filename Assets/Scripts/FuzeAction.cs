@@ -13,7 +13,8 @@ public class FuzeAction : MonoBehaviour
     private float currentAmount = 0;
 
     [SerializeField]
-    private const float SPEED = 2;
+    [Range(0.25f, 5.0f)]
+    private float SPEED = 2;
 
     [SerializeField]
     private Color enterColor = new Color(0f,1f,0f,1f);
@@ -31,7 +32,7 @@ public class FuzeAction : MonoBehaviour
     public void OnFuzeAction(){
         if(!triggered){
             if(currentAmount < 1){
-                currentAmount += SPEED * Time.deltaTime; 
+                currentAmount += SPEED * Time.unscaledDeltaTime; 
             }
             else{
                 CameraPointer.instance.SendGazeEnter();

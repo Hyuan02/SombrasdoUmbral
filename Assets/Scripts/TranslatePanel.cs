@@ -21,7 +21,7 @@ public class TranslatePanel : MonoBehaviour
     void Update()
     {
         if(movement){
-            this.transform.position = Vector3.Lerp(this.transform.position, nextPosition, Time.deltaTime * speed);
+            this.transform.position = Vector3.Lerp(this.transform.position, nextPosition, Time.unscaledDeltaTime * speed);
             if(Vector3.Distance(this.transform.position, nextPosition)<1.0f){
                 movement = false;
                 this.transform.SetParent(toParent);

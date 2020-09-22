@@ -32,7 +32,7 @@ public class FuzeAction : MonoBehaviour
     public void OnFuzeAction(){
         if(!triggered){
             if(currentAmount < 1){
-                currentAmount += SPEED * Time.deltaTime; 
+                currentAmount += SPEED * Time.unscaledDeltaTime; 
             }
             else{
                 CameraPointer.instance.SendGazeEnter();

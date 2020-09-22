@@ -68,16 +68,26 @@ public class SliderFlow : MonoBehaviour
 
     void SetInteractable(){
         //panels[actualIndex].tag = "Interactable";
-        foreach (Transform item in panels[actualIndex].transform)
-        {
-            item.tag = "Interactable";
+        if(panels[actualIndex].tag != "Selector"){
+            foreach (Transform item in panels[actualIndex].transform)
+            {
+                item.tag = "Interactable";
+            }        
         }
+        else{
+            panels[actualIndex].GetComponent<TriggerChoiceEffect>().TurnToTag("Interactable");
+        }        
     }
     void SetUntagged(){
         //panels[actualIndex].tag = "Interactable";
-        foreach (Transform item in panels[actualIndex].transform)
-        {
-            item.tag = "Untagged";
+        if(panels[actualIndex].tag != "Selector"){
+            foreach (Transform item in panels[actualIndex].transform)
+            {
+                item.tag = "Untagged";
+            }        
+        }
+        else{
+            panels[actualIndex].GetComponent<TriggerChoiceEffect>().TurnToTag("Untagged");
         }
     }
 

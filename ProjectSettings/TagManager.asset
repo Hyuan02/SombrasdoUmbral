@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Portal Camera
   - Interactable
+  - AnimPanel
+  - Selector
   layers:
   - Default
   - TransparentFX

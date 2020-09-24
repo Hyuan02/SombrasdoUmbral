@@ -1,5 +1,21 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!111 &3989191488792031970
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2421787199709879882}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 0}
+  m_Animations:
+  - {fileID: 7400000, guid: d409cb82ea7b3a849a8429bbb5932f38, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &4492636712802732489
 GameObject:
   m_ObjectHideFlags: 0
@@ -241,7 +257,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &4492636714266728845
 RectTransform:
   m_ObjectHideFlags: 0
@@ -447,6 +463,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2288646549544468502, guid: 1ca496805cbbe1845be7819029bfed4c,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 2288646549544468505, guid: 1ca496805cbbe1845be7819029bfed4c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -519,6 +540,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1ca496805cbbe1845be7819029bfed4c, type: 3}
+--- !u!1 &2421787199709879882 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2288646549544468502, guid: 1ca496805cbbe1845be7819029bfed4c,
+    type: 3}
+  m_PrefabInstance: {fileID: 4492636713588235868}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2421787199709879877 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2288646549544468505, guid: 1ca496805cbbe1845be7819029bfed4c,

@@ -1767,6 +1767,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   index: 0
   atTime: 0
+  onTime: 1
 --- !u!4 &674932474 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2288646549544468505, guid: 1ca496805cbbe1845be7819029bfed4c,
@@ -2006,6 +2007,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_RenderPostProcessing
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2288646549464175523, guid: 1ca496805cbbe1845be7819029bfed4c,
+        type: 3}
+      propertyPath: m_RendererIndex
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 2288646549464175546, guid: 1ca496805cbbe1845be7819029bfed4c,
         type: 3}
@@ -3086,6 +3092,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   index: 0
+  secondsToPlay: 1
 --- !u!1 &1653015928
 GameObject:
   m_ObjectHideFlags: 0
@@ -3535,7 +3542,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1943030541}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 5, z: 64.92}
+  m_LocalPosition: {x: 0, y: 5, z: 65.73}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1315543158}

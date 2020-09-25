@@ -24,6 +24,9 @@ public class SoundManager : MonoBehaviour
     private int soundActivated = 1;
 
     private int soundMode = 1;
+    AudioMixerSnapshot audio;
+
+     
     void Awake(){
         mainAudioSource = this.GetComponent<AudioSource>();
         instance = this;
@@ -31,15 +34,15 @@ public class SoundManager : MonoBehaviour
         soundActivated = PlayerPrefs.GetInt("Sound", 1);
         soundMode = PlayerPrefs.GetInt("SoundMode", 0);
         mainAudioSource.mute = soundActivated > 0 ? false : true;
-        volumeToTrack = soundMode > 0 ? volumeToTrack : volumeToTrack * 2;
-        
-        
-        mainAudioSource.volume = volumeToTrack;
+        // volumeToTrack = soundMode > 0 ? volumeToTrack : volumeToTrack * 2;
+        audio = soundMode > 0 ? mainMixer.FindSnapshot("Fone de Ouvido") : mainMixer.FindSnapshot("Alto Falante");
+        // mainAudioSource.volume = volumeToTrack;
     }
 
     void Start(){
-        mainMixer.SetFloat("rain_volume", soundActivated > 0 ? 0f : -80f);
-        mainMixer.SetFloat("music_volume", soundMode > 0 ? -10f : 0f);
+        // mainMixer.SetFloat("rain_volume", soundActivated > 0 ? 0f : -80f);
+        // mainMixer.SetFloat("music_volume", soundMode > 0 ? -10f : 0f);
+        audio.TransitionTo(0.5f);
     }
 
 

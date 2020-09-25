@@ -58,6 +58,7 @@ AudioMixerController:
   m_MasterGroup: {fileID: 24300002}
   m_Snapshots:
   - {fileID: 24500006}
+  - {fileID: 1883234362011113015}
   m_StartSnapshot: {fileID: 24500006}
   m_SuspendThreshold: -80
   m_EnableSuspend: 1
@@ -120,14 +121,14 @@ AudioMixerSnapshotController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Snapshot
+  m_Name: Fone de Ouvido
   m_AudioMixer: {fileID: 24100000}
   m_SnapshotID: db19ff4cf2a61ac48abdf15443d7aef9
   m_FloatValues:
     206666330271d1d44b3cd16081b36011: 0.27000841
-    84baf5d340ceb6d4c9697f89cee2b8a1: 0.10800299
-    a5e70996229e7634595c4fe57414d5af: 0
-    91e16ae82a221714a9d52976de3e9ac5: 0.04171297
+    84baf5d340ceb6d4c9697f89cee2b8a1: -14.96685
+    a5e70996229e7634595c4fe57414d5af: -14.816608
+    91e16ae82a221714a9d52976de3e9ac5: 4.648096
   m_TransitionOverrides: {}
 --- !u!244 &340874242544300042
 AudioMixerEffectController:
@@ -143,6 +144,21 @@ AudioMixerEffectController:
   m_SendTarget: {fileID: 0}
   m_EnableWetMix: 0
   m_Bypass: 0
+--- !u!245 &1883234362011113015
+AudioMixerSnapshotController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Alto Falante
+  m_AudioMixer: {fileID: 24100000}
+  m_SnapshotID: fcef14a1c4d000b4eb7713ab1fb4698c
+  m_FloatValues:
+    206666330271d1d44b3cd16081b36011: 0.27000841
+    84baf5d340ceb6d4c9697f89cee2b8a1: -0.002441872
+    a5e70996229e7634595c4fe57414d5af: 0.04171297
+    91e16ae82a221714a9d52976de3e9ac5: 0
+  m_TransitionOverrides: {}
 --- !u!243 &3976801010019395964
 AudioMixerGroupController:
   m_ObjectHideFlags: 0

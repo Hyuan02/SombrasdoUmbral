@@ -30,7 +30,8 @@ public class GrayscaleFilter : ScriptableRenderPass
         // Debug.Log("Drawing");
         // Graphics.Blit (source, destination, material);
 
-
+        CommandBuffer cmd = CommandBufferPool.Get(k_RenderTag);
+        // cmd.Blit()
 
     }
 }

@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -689,6 +689,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1674ce11d5e5ee4dab9f1b8ca34a26a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  blackAndWhiteEffect: {fileID: 2100000, guid: a5ed2612d64d99644b0ccd7b5ee5309b, type: 2}
 --- !u!1001 &147398973
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1747,6 +1748,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   index: 1
   atTime: 8
+  onTime: 1
 --- !u!1 &350373914
 GameObject:
   m_ObjectHideFlags: 0
@@ -6044,6 +6046,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   index: 0
   atTime: 0
+  onTime: 1
 --- !u!1001 &1142423231
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8016,6 +8019,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   index: 0
+  secondsToPlay: 1
 --- !u!1001 &1592709418
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10024,6 +10028,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   index: 0
+  secondsToPlay: 1
 --- !u!114 &1944124181
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1376,6 +1376,28 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c6c2386c2eda4fc49a9c25d353d190d1, type: 3}
+--- !u!1 &374632100 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2288646549544468502, guid: 1ca496805cbbe1845be7819029bfed4c,
+    type: 3}
+  m_PrefabInstance: {fileID: 1040513107}
+  m_PrefabAsset: {fileID: 0}
+--- !u!111 &374632101
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 374632100}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 0}
+  m_Animations:
+  - {fileID: 7400000, guid: d409cb82ea7b3a849a8429bbb5932f38, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!4 &375332590 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 0454ec9e752905e4d9909fd317a398d9,
@@ -1465,6 +1487,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   index: 0
   atTime: 0
+  onTime: 1
 --- !u!114 &433531462
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3206,6 +3229,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2288646549544468502, guid: 1ca496805cbbe1845be7819029bfed4c,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 2288646549544468505, guid: 1ca496805cbbe1845be7819029bfed4c,
         type: 3}
@@ -5112,6 +5140,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   index: 0
+  secondsToPlay: 1
 --- !u!4 &1546271659 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 935e36790cd0e574ba4f96ba0e86db36,

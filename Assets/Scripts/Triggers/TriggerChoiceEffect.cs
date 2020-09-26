@@ -12,6 +12,12 @@ public class TriggerChoiceEffect : MonoBehaviour
 
 
     int choiceIndexMade = 0;
+
+    float value = 0.0f;
+    float toValue = 0.0f;
+
+    [SerializeField]
+    private Material blackAndWhiteEffect;
     // Start is called before the first frame update
     void Start()
     {
@@ -29,12 +35,12 @@ public class TriggerChoiceEffect : MonoBehaviour
                 switch (previousName)
                 {
                     case "CurrentPanel":
-                        this.GetComponent<Volume>().enabled = true;
+                        ActivatePostFX();
                         Time.timeScale = 0.2f;
                         this.transform.GetChild(0).gameObject.SetActive(true);
                         break;
                     default:
-                        this.GetComponent<Volume>().enabled = false;
+                        DisablePostFX();
                         this.transform.GetChild(0).gameObject.SetActive(false);
                         Time.timeScale = 1.0f;
                         break;
@@ -43,13 +49,16 @@ public class TriggerChoiceEffect : MonoBehaviour
         }
         else{
             if(previousName != "selected"){
-                this.GetComponent<Volume>().enabled = false;
+                // this.GetComponent<Volume>().enabled = false;
+                DisablePostFX();
                 this.transform.GetChild(0).gameObject.SetActive(false);
                 this.transform.GetChild(choiceIndexMade).gameObject.SetActive(true);
                 Time.timeScale = 1.0f;
                 previousName = "selected";
             }   
         }
+        
+        ControlPostFXValue();
         
     }
 
@@ -68,5 +77,21 @@ public class TriggerChoiceEffect : MonoBehaviour
                 item.tag = tag;
             }  
         }
+    }
+
+    private void ActivatePostFX(){
+        toValue = 1;
+    }
+
+    private void DisablePostFX(){
+        toValue = 0;
+    }
+
+    private void ControlPostFXValue(){
+        if(Mathf.Abs(toValue - value) < 0.01f)
+            return;
+        value = Mathf.Lerp(value, toValue, Time.unscaledDeltaTime);
+        blackAndWhiteEffect.SetFloat("_bwBlend", value);
+
     }
 }

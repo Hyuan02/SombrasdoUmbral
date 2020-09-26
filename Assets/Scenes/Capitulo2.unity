@@ -14,7 +14,7 @@ OcclusionCullingSettings:
 RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 9
-  m_Fog: 1
+  m_Fog: 0
   m_FogColor: {r: 0.047169805, g: 0.044277318, b: 0.044277318, a: 1}
   m_FogMode: 3
   m_FogDensity: 0.02
@@ -1593,6 +1593,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   index: 1
   atTime: 8
+  onTime: 1
 --- !u!1 &350373914
 GameObject:
   m_ObjectHideFlags: 0
@@ -5134,6 +5135,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   index: 0
   atTime: 0
+  onTime: 1
 --- !u!1 &1144616839
 GameObject:
   m_ObjectHideFlags: 0
@@ -7599,6 +7601,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   index: 0
+  secondsToPlay: 1
 --- !u!1001 &1528150650
 PrefabInstance:
   m_ObjectHideFlags: 0

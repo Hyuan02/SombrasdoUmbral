@@ -14,17 +14,17 @@ Material:
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
+  m_CustomRenderQueue: 3000
   stringTagMap: {}
   disabledShaderPasses: []
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs: []
     m_Floats:
-    - _CutoffHeight: -0.17
-    - _EdgeWidth: 0.02
-    - _NoiseScale: 50.06
-    - _NoiseStrength: 3.3
+    - _CutoffHeight: 17.5
+    - _EdgeWidth: 0.4
+    - _NoiseScale: 32.87
+    - _NoiseStrength: 104.84
     m_Colors:
     - _Albedo: {r: 0, g: 0, b: 0, a: 1}
     - _EdgeColor: {r: 0.9528302, g: 0.93233097, b: 0.876424, a: 1}

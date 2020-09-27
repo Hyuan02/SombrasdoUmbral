@@ -13,6 +13,9 @@ public class TriggerMixerCut : MonoBehaviour
 
     [SerializeField]
     private bool pageMode = true;
+
+    [SerializeField]
+    private bool disabling = true;
     void Update()
     {
         if (pageMode)
@@ -21,7 +24,12 @@ public class TriggerMixerCut : MonoBehaviour
             {
                 if (this.transform.parent.name == "CurrentPanel")
                 {
-                    ActivateCut();
+                    if(disabling){
+                        ActivateCut();
+                    }
+                    else{
+                        DisableCut();
+                    }
                     changed = true;
                 }
             }

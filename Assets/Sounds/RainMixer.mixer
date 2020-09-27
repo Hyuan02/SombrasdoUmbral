@@ -65,11 +65,11 @@ AudioMixerController:
   m_UpdateMode: 0
   m_ExposedParameters:
   - guid: 91e16ae82a221714a9d52976de3e9ac5
-    name: fx_volume
+    name: FX_volume
   - guid: a5e70996229e7634595c4fe57414d5af
-    name: music_volume
+    name: Music_volume
   - guid: 84baf5d340ceb6d4c9697f89cee2b8a1
-    name: rain_volume
+    name: Rain_volume
   m_AudioMixerGroupViews:
   - guids:
     - c68a3aae80544c746832471a42834de8
@@ -128,7 +128,7 @@ AudioMixerSnapshotController:
     206666330271d1d44b3cd16081b36011: 0.27000841
     84baf5d340ceb6d4c9697f89cee2b8a1: -14.96685
     a5e70996229e7634595c4fe57414d5af: -14.816608
-    91e16ae82a221714a9d52976de3e9ac5: 4.648096
+    91e16ae82a221714a9d52976de3e9ac5: 20
   m_TransitionOverrides: {}
 --- !u!244 &340874242544300042
 AudioMixerEffectController:

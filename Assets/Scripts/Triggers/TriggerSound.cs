@@ -15,6 +15,13 @@ public class TriggerSound : MonoBehaviour
 
     [SerializeField]
     bool pageMode = true;
+
+    [SerializeField]
+    bool onSelector = false;
+
+    [SerializeField]
+    [Range(0.0f, 1.0f)]
+    float volumeToTrack = -1;
     // Update is called once per frame
     void Update()
     {
@@ -23,7 +30,7 @@ public class TriggerSound : MonoBehaviour
         {
             if (!changed)
             {
-                if (this.transform.parent.name == "CurrentPanel")
+                if (onSelector ? this.transform.parent.parent.name == "CurrentPanel" : this.transform.parent.name == "CurrentPanel")
                 {
                     Invoke("PlaySound", secondsToPlay);        
                 }
@@ -34,7 +41,7 @@ public class TriggerSound : MonoBehaviour
 
     void PlaySound(){
         if(!changed){
-            SoundManager.instance.ChangeToSound(index);
+            SoundManager.instance.ChangeToSound(index, volumeToTrack);
             changed = true;
         }
     }

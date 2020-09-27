@@ -46,7 +46,7 @@ public class TriggerActivation : MonoBehaviour
     }
 
 
-    private void ActivateEffect(){
+    public void ActivateEffect(){
         if(pageMode){
             SoundManager.instance.Activate3DSound(index, atTime);
         }
@@ -60,7 +60,7 @@ public class TriggerActivation : MonoBehaviour
         }
     }
 
-    void DisableEffect(){
+    public void DisableEffect(){
         CancelInvoke("ActivateEffect");
         SoundManager.instance.Disable3DSound(index);
     }

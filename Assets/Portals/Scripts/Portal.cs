@@ -11,12 +11,12 @@ public class Portal : MonoBehaviour
     
     private void OnEnable()
     {
-        RenderPipelineManager.beginCameraRendering += UpdateCamera;
+        RenderPipelineManager.endCameraRendering += UpdateCamera;
     }
 
     private void OnDisable()
     {
-        RenderPipelineManager.beginCameraRendering -= UpdateCamera;
+        RenderPipelineManager.endCameraRendering -= UpdateCamera;
     }
 
     void UpdateCamera(ScriptableRenderContext context,Camera camera)

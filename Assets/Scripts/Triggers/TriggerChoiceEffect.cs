@@ -36,7 +36,7 @@ public class TriggerChoiceEffect : MonoBehaviour
                 {
                     case "CurrentPanel":
                         ActivatePostFX();
-                        Time.timeScale = 0.2f;
+                        Time.timeScale = 0.05f;
                         this.transform.GetChild(0).gameObject.SetActive(true);
                         break;
                     default:

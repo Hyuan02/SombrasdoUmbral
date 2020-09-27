@@ -10,6 +10,8 @@ public class ScreenManager : MonoBehaviour
     [SerializeField]
     GameObject startScreen = null;
 
+    public Material materialToReset;
+
     AsyncOperation asyncLoad;
 
     void Awake(){
@@ -20,6 +22,10 @@ public class ScreenManager : MonoBehaviour
             Destroy(instance);
             instance = this;
         }
+    }
+
+    void Start(){
+        ResetMaterial();
     }
     public void LoadAsyncScene(){
         asyncLoad = SceneManager.LoadSceneAsync(1, LoadSceneMode.Single);
@@ -33,5 +39,9 @@ public class ScreenManager : MonoBehaviour
         yield return new WaitUntil(()=>asyncLoad.progress >= 0.9f);
         Screen.orientation = ScreenOrientation.LandscapeLeft;
         asyncLoad.allowSceneActivation = true;
+    }
+
+    private void ResetMaterial(){
+        materialToReset.SetFloat("_bwBlend", 0.0f);
     }
 }

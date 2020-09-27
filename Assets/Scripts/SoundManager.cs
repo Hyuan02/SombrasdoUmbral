@@ -49,7 +49,7 @@ public class SoundManager : MonoBehaviour
     public void ChangeToSound(int soundIndex){
         mainAudioSource.Stop();
         mainAudioSource.clip = clips[soundIndex];
-        mainAudioSource.volume = volumeToTrack;
+        // mainAudioSource.volume = volumeToTrack;
         mainAudioSource.Play();
     }
 
@@ -61,8 +61,13 @@ public class SoundManager : MonoBehaviour
         a1.mute = soundActivated > 0 ? false : true;
         a1.spatialBlend = soundMode;
         a1.panStereo = soundMode > 0 ? 0 : 1;
-        mainMixer.SetFloat("fx_volume", soundMode > 0 ? 20f : 0f);
+        // mainMixer.SetFloat("fx_volume", soundMode > 0 ? 20f : 0f);
 
+    }
+
+    public void Disable3DSound(int soundIndex){
+        if(this.transform.GetChild(soundIndex).gameObject.activeSelf)
+            this.transform.GetChild(soundIndex).gameObject.SetActive(false);
     }
     
 

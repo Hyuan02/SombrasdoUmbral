@@ -49,7 +49,7 @@ public class SoundManager : MonoBehaviour
     public void ChangeToSound(int soundIndex){
         mainAudioSource.Stop();
         mainAudioSource.clip = clips[soundIndex];
-        mainAudioSource.volume = volumeToTrack;
+        // mainAudioSource.volume = volumeToTrack;
         mainAudioSource.Play();
     }
 

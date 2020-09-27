@@ -19,6 +19,9 @@ public class TriggerActivation : MonoBehaviour
     [SerializeField]
     bool pageMode = true;
 
+    [SerializeField]
+    bool onSelector = false;
+
     // Update is called once per frame
     void Update()
     {
@@ -26,7 +29,7 @@ public class TriggerActivation : MonoBehaviour
         {
             if (!changed)
             {
-                if (this.transform.parent.name == "CurrentPanel")
+                if (onSelector? this.transform.parent.parent.name == "CurrentPanel" : this.transform.parent.name == "CurrentPanel")
                 {
                     Invoke("ActivateEffect", onTime);
                     changed = true;
@@ -34,7 +37,7 @@ public class TriggerActivation : MonoBehaviour
             }
             else if (changed)
             {
-                if (this.transform.parent.name != "CurrentPanel")
+                if (onSelector? this.transform.parent.parent.name != "CurrentPanel" : this.transform.parent.name != "CurrentPanel")
                 {
                     Invoke("DisableEffect", 0.0f);
                 }

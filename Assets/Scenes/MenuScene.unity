@@ -338,6 +338,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   loadingAnim: {fileID: 397726580}
   startScreen: {fileID: 1439785555}
+  materialToReset: {fileID: 2100000, guid: a5ed2612d64d99644b0ccd7b5ee5309b, type: 2}
 --- !u!4 &107393355
 Transform:
   m_ObjectHideFlags: 0
@@ -1033,7 +1034,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 296, y: 102}
+  m_AnchoredPosition: {x: 94.5, y: 102}
   m_SizeDelta: {x: 538.3, y: 156.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &659964145
@@ -1114,7 +1115,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
   m_AnchoredPosition: {x: -0.1499939, y: 0}
-  m_SizeDelta: {x: -0.29999983, y: 102.1}
+  m_SizeDelta: {x: -0.29999983, y: 102}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &680171807
 MonoBehaviour:
@@ -1331,7 +1332,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 848, y: 109}
+  m_AnchoredPosition: {x: 629.9, y: 109}
   m_SizeDelta: {x: 581.79, y: 113.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &767326463
@@ -1832,7 +1833,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
   m_AnchoredPosition: {x: 0, y: 2}
-  m_SizeDelta: {x: 0, y: 344.7}
+  m_SizeDelta: {x: 0, y: 400}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &957025384
 MonoBehaviour:
@@ -1935,7 +1936,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 50}
+  m_SizeDelta: {x: 0, y: 150}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!1 &1030110543
 GameObject:
@@ -2504,7 +2505,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -454, y: 112}
+  m_AnchoredPosition: {x: -456.14, y: 112}
   m_SizeDelta: {x: 1057.3, y: 174.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1451668958
